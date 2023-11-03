@@ -157,7 +157,7 @@ When you press one of the pushbuttons "+" or "-" in normal operational mode, the
 ### Voltage of battery in mV 
 ![display battery](assets/images/display_vbat.png)
 
-While loading (Between sunrise and sunset with enough sun light) this voltage is the battery loading voltage. If you want to see the battery voltage start displaying the status values after sunset.
+While charging (Between sunrise and sunset with enough sun light) this voltage is the battery charging voltage. If you want to see the battery voltage start displaying the status values after sunset.
 
 ### Current value for the light dependent resistor LDR
 ![display LDR](assets/images/display_ldr.png)
@@ -165,7 +165,7 @@ While loading (Between sunrise and sunset with enough sun light) this voltage is
 ### Nonstop device runtime in days
 ![display runtime](assets/images/display_runtime.png)
 
-When the device is powered on and gets the first time (By DCF77 or manually set) this time will be set as boot time. The difference between the current time and the boot time will be shown here as runtime. When you manually set the time for a running device to a time before the boot time this time will be set as boot time.  
+When the device is powered on and gets the first time (By DCF77 or manually set) this time will be set as boot time. The difference between the current time and the boot time will be shown here as runtime. When due a DCF77 sync or you manually set the time for a running device to a time before the boot time this time will be set as boot time.  
 
 ### Target solar panel orientation 
 ![display servo orientation](assets/images/display_servoTargetDegree.png)
