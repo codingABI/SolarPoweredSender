@@ -99,6 +99,7 @@
  * 01.02.2022, Add 433 MHz sender
  * 03.09.2023, Replace RTC with DCF77 module
  * 26.09.2023, Add support for Emil Lux 315606 power outlets
+ * 27.10.2024, Use DCF.getUTCTime instead of localTimeToUTC(DCF.getTime())
  */
 
 #include <DCF77.h>
@@ -408,7 +409,7 @@ void setup() {
   if (!DEBUG) {
     setTime(tmConvert_t(2000,1,1,0,0,0));
   } else {
-    setTime(tmConvert_t(2023,10,17,17,56,0));    
+    setTime(tmConvert_t(2023,10,21,17,58,0));    
   }
 
   // Read settings (Last parking time and servo calibration) from EEPROM

@@ -203,6 +203,7 @@ void checkSetTime(bool force) {
       SERIALDEBUG.println(F("Forced DCF77")); 
     else 
       SERIALDEBUG.println(F("Start DCF77"));
+
     // Start DCF
     DCF.Start();
 
@@ -215,12 +216,12 @@ void checkSetTime(bool force) {
   
       DCF77time = DCF.getTime(); // Check if new DCF77 time is available
       if (checkSetManualTime()) {
-        DCF77time = UTCtoLocalTime(now()); // Overwrite DCF77 time with manually set time        
+        DCF77time = now(); // Overwrite DCF77 time with manually set time        
       }
             
       if (DCF77time!=0) { // Valid time found
         SERIALDEBUG.println(F("DCF77 done"));
-        setTime(localTimeToUTC(DCF77time));
+        setTime(DCF77time);
         if ((g_bootTimeUTC == 0) || (now()<g_bootTimeUTC)) g_bootTimeUTC = now();
         timeSetDailyDone = true;
       } else {
@@ -295,7 +296,7 @@ time_t tmConvert_t(int YYYY, byte MM, byte DD, byte hh, byte mm, byte ss)
   return makeTime(tmSet); 
 }
 
-// Convert Germany local time to UTC
+// Convert Germany local time to UTC (First hour of summertime->wintertime change will be returned as wintertime) 
 time_t localTimeToUTC(time_t localTime) {
   if (summertime_EU(year(localTime),month(localTime),day(localTime),hour(localTime),1)) {
     return  localTime-7200UL; // Summer time
