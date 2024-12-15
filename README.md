@@ -63,7 +63,7 @@ with the Arduino IDE Library Manager. Only the library **SolarPosition** (by Ken
  * After getting a valid time the device is always 4 minutes in deep sleep, wakes up and stays active typically for about ~0.5 seconds (and longer when parking, showing status values, DCF77 sync, manual setting the time...) and goes again to deep sleep 
  * In deep sleep: ~3 mW (The MT3608-Boost converter consumes ~2mW idle power)
  * Active time: up to 1.5W, when the servo is rotating (At begin of the servo rotation for a short time also more) => C4 with 470uF helps
- * Device is still working from February 2022 until now (October 2024) only with solar power and I get no direct sun light from May to August at my device position
+ * Device is still working from February 2022 until now (December 2024) only with solar power and I get no direct sun light from May to August at my device position
 
 ## Red status led
 | Led | Meaning |
