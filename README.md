@@ -72,7 +72,7 @@ with the Arduino IDE Library Manager. Only the library **SolarPosition** (by Ken
 | One short blink every 8 seconds | Low battery (every 16 seconds, if last DCF77 sync was not successful) |
 | Double short blink every 8 seconds | Environment light not high enough to rotate solar panel (every 16 seconds, if last DCF77 sync was not successful) |
 | Continuous light for 8 seconds |  Pending WDT device reset |
-| No fixed time | After device startup the red led should be enabled for about 5-60 seconds and blink afterwards once per second for some minutes. Otherwise the DCF77 signal could not be received and the DCF77 sync will timeout. |
+| Once per second for some minutes | After device startup the red led should be enabled for about 5-60 seconds and blink afterwards once per second for some minutes. Otherwise the DCF77 signal could not be received and the DCF77 sync will timeout. |
 
  ## Buzzer-Codes
 | Buzzer | Meaning |
